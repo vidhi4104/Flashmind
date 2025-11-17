@@ -1,0 +1,380 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 14px;
+  
+  /* Light Mode Color Palette */
+  --light-bg: #F8FAFC;
+  --light-card: #FFFFFF;
+  --light-primary-text: #1E293B;
+  --light-secondary-text: #64748B;
+  --light-positive: #22C55E;
+  --light-negative: #EF4444;
+  --light-cta: #3B82F6;
+  --light-tag: #E2E8F0;
+  --light-hover: #F1F5F9;
+  --light-table-hover: #F8FAFC;
+  --light-border: #E2E8F0;
+  
+  /* Updated theme variables for light mode */
+  --background: #F8FAFC;
+  --foreground: #1E293B;
+  --card: #FFFFFF;
+  --card-foreground: #1E293B;
+  --popover: #FFFFFF;
+  --popover-foreground: #1E293B;
+  --primary: #3B82F6;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F1F5F9;
+  --secondary-foreground: #1E293B;
+  --muted: #F1F5F9;
+  --muted-foreground: #64748B;
+  --accent: #3B82F6;
+  --accent-foreground: #FFFFFF;
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --border: #E2E8F0;
+  --input: #FFFFFF;
+  --input-background: #FFFFFF;
+  --switch-background: #E2E8F0;
+  --font-weight-medium: 600;
+  --font-weight-normal: 400;
+  --ring: #3B82F6;
+  
+  /* Chart colors using light theme palette */
+  --chart-1: #3B82F6;
+  --chart-2: #22C55E;
+  --chart-3: #64748B;
+  --chart-4: #F59E0B;
+  --chart-5: #EF4444;
+  
+  --radius: 0.75rem;
+  
+  /* Sidebar colors for light theme */
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #1E293B;
+  --sidebar-primary: #1E293B;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #3B82F6;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #E2E8F0;
+  --sidebar-ring: #3B82F6;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* Light theme specific colors */
+  --color-light-bg: var(--light-bg);
+  --color-light-card: var(--light-card);
+  --color-light-primary-text: var(--light-primary-text);
+  --color-light-secondary-text: var(--light-secondary-text);
+  --color-light-positive: var(--light-positive);
+  --color-light-negative: var(--light-negative);
+  --color-light-cta: var(--light-cta);
+  --color-light-tag: var(--light-tag);
+  --color-light-hover: var(--light-hover);
+  --color-light-table-hover: var(--light-table-hover);
+  --color-light-border: var(--light-border);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 400;
+  }
+}
+
+/**
+ * Base typography with light theme styling
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: 1.875rem;
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--light-primary-text);
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--light-primary-text);
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--light-primary-text);
+    }
+
+    h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--light-primary-text);
+    }
+
+    p {
+      font-size: 0.875rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--light-secondary-text);
+    }
+
+    label {
+      font-size: 0.875rem;
+      font-weight: 500;
+      line-height: 1.4;
+      color: var(--light-primary-text);
+    }
+
+    button {
+      font-size: 0.875rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    input {
+      font-size: 0.875rem;
+      font-weight: 400;
+      line-height: 1.4;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* Light theme utility classes */
+@layer utilities {
+  /* Text colors */
+  .text-light-primary { color: var(--color-light-primary-text); }
+  .text-light-secondary { color: var(--color-light-secondary-text); }
+  .text-light-positive { color: var(--color-light-positive); }
+  .text-light-negative { color: var(--color-light-negative); }
+  .text-light-cta { color: var(--color-light-cta); }
+  
+  /* Background colors */
+  .bg-light-bg { background-color: var(--color-light-bg); }
+  .bg-light-card { background-color: var(--color-light-card); }
+  .bg-light-tag { background-color: var(--color-light-tag); }
+  .bg-light-hover { background-color: var(--color-light-hover); }
+  .bg-light-table-hover { background-color: var(--color-light-table-hover); }
+  
+  /* Border colors */
+  .border-light-color { border-color: var(--color-light-border); }
+}
+
+/* Enhanced component styling for light theme */
+@layer components {
+  .light-card {
+    border-radius: 0.75rem;
+    border: 1px solid var(--color-light-border);
+    padding: 1.5rem;
+    background-color: var(--color-light-card);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 8px, rgba(0, 0, 0, 0.05) 0px 1px 4px;
+  }
+  
+  .light-button-primary {
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    transition: all 0.2s ease;
+    color: #FFFFFF;
+    background-color: var(--color-light-cta);
+  }
+  
+  .light-button-primary:hover {
+    background-color: #2563eb;
+    box-shadow: 0 0 0 1px var(--color-light-cta), 0 0 8px rgba(59, 130, 246, 0.3);
+  }
+  
+  .light-button-secondary {
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    transition: all 0.2s ease;
+    background-color: transparent;
+    color: var(--color-light-cta);
+    border: 1px solid var(--color-light-cta);
+  }
+  
+  .light-button-secondary:hover {
+    background-color: rgba(59, 130, 246, 0.05);
+  }
+  
+  .light-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    color: var(--color-light-secondary-text);
+  }
+  
+  .light-nav-item-active {
+    background-color: var(--color-light-hover);
+    color: var(--color-light-primary-text);
+    border: 1px solid var(--color-light-cta);
+  }
+  
+  .light-nav-item:hover {
+    background-color: var(--color-light-hover);
+    color: var(--color-light-primary-text);
+  }
+
+  .light-shadow {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 8px, rgba(0, 0, 0, 0.05) 0px 1px 4px;
+  }
+  
+  .light-shadow-lg {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 24px, rgba(0, 0, 0, 0.05) 0px 4px 12px;
+  }
+  
+  .light-tag {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-light-primary-text);
+    background-color: var(--color-light-tag);
+    border: 1px solid var(--color-light-border);
+  }
+  
+  .light-metric-positive {
+    color: var(--color-light-positive);
+  }
+  
+  .light-metric-negative {
+    color: var(--color-light-negative);
+  }
+}
+
+/* Page transition and animation effects */
+@layer utilities {
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+      opacity: 0.3;
+    }
+    50% {
+      transform: translateY(-20px) rotate(180deg);
+      opacity: 0.1;
+    }
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: -200px 0;
+    }
+    100% {
+      background-position: calc(200px + 100%) 0;
+    }
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+    }
+  }
+  
+  @keyframes bounce-in {
+    0% {
+      transform: scale(0.3) rotate(-10deg);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.05) rotate(5deg);
+    }
+    70% {
+      transform: scale(0.9) rotate(-2deg);
+    }
+    100% {
+      transform: scale(1) rotate(0deg);
+      opacity: 1;
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    background-size: 200px 100%;
+    animation: shimmer 2s infinite;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  
+  .animate-bounce-in {
+    animation: bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  }
+  
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .gradient-border {
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(45deg, #3B82F6, #8B5CF6, #06B6D4) border-box;
+    border: 2px solid transparent;
+  }
+}
